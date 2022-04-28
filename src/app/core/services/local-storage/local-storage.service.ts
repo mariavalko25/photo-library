@@ -5,10 +5,10 @@ import { Injectable } from '@angular/core';
 })
 export class LocalStorageService {
   public getDataFromLocalStorage(key: string): string | null {
-    return JSON.parse(<string>localStorage.getItem(key)) || null;
+    return localStorage.getItem(key) || null;
   }
 
   public setDataToLocalStorage(key: string, value: string): void {
-    localStorage.setItem(key, JSON.stringify(value));
+    localStorage.setItem(key, value);
   }
 }
