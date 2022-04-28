@@ -1,10 +1,16 @@
-import { TestBed } from '@angular/core/testing';
 import { firstValueFrom } from 'rxjs';
 import { PhotoData } from 'src/app/shared/models/photo-data.m';
+import { LocalStorageService } from '../local-storage/local-storage.service';
 import { FavoritesPhotosDataService } from './favorites-photos-data.service';
 
 describe('FavoritesPhotosDataService', () => {
   let service: FavoritesPhotosDataService;
+  const localStorageServiceStub = {
+    getDataFromLocalStorage(key: 'test-key'): string | null {
+      return null;
+    },
+    setDataToLocalStorage(key: 'test-key', value = 'value'): void {},
+  } as LocalStorageService;
   const photoList: PhotoData[] = [
     {
       id: '1',
@@ -17,8 +23,7 @@ describe('FavoritesPhotosDataService', () => {
   ];
 
   beforeEach(() => {
-    TestBed.configureTestingModule({});
-    service = TestBed.inject(FavoritesPhotosDataService);
+    service = new FavoritesPhotosDataService(localStorageServiceStub);
     service.favoritesPhotos$.next([...photoList]);
   });
 
