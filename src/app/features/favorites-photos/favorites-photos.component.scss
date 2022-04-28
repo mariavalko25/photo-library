@@ -2,6 +2,8 @@
   display: flex;
   flex-wrap: wrap;
   width: 100%;
+  height: calc(100% - 70px);
+  overflow: auto;
 
   &__card {
     margin: 30px;

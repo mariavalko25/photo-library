@@ -1,4 +1,4 @@
-<div class="photo-list">
+<div class="photo-list" appCustomInfiniteScroll (scrolled)="onScroll()">
   <app-photo-card
     *ngFor="let photoCard of photoList"
     class="photo-list__card"
@@ -6,3 +6,4 @@
     (click)="onPhotoCardClick(photoCard)"
   ></app-photo-card>
 </div>
+<app-loading *ngIf="isLoading" class="loading"></app-loading>

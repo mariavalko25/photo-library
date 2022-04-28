@@ -1,9 +1,36 @@
+@import "colors";
+
+$size-100-percent: 100%;
+$size-photo-list-width: $size-100-percent;
+$size-photo-list-height: calc(100% - 70px);
+$size-loading-width: $size-100-percent;
+$size-loading-height: 100px;
+
+:host {
+  display: block;
+  position: relative;
+  height: $size-100-percent;
+}
+
 .photo-list {
   display: flex;
   flex-wrap: wrap;
-  width: 100%;
+  width: $size-photo-list-width;
+  height: $size-photo-list-height;
+  overflow: auto;
 
   &__card {
     margin: 30px;
   }
+}
+
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: $size-loading-width;
+  height: $size-loading-height;
+  position: absolute;
+  bottom: 65px;
+  background-color: $color-white;
 }

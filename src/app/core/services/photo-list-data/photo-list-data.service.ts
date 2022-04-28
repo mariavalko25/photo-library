@@ -14,7 +14,7 @@ export class PhotoListDataService {
   constructor(private http: HttpClient) {}
 
   public getPhotoListData(page: number): Observable<PhotoData[]> {
-    const limit = 10;
+    const limit = 20;
     const params = new HttpParams({ fromObject: { page, limit } });
 
     return this.http.get<PhotoDataResponse[]>(API_URL, { params }).pipe(
