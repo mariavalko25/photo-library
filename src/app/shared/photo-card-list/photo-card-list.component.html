@@ -1,0 +1,6 @@
+<app-photo-card
+  *ngFor="let photoCard of photoList"
+  class="photo-card"
+  [imgUrl]="photoCard.imgUrl"
+  (click)="photoCardClicked.emit(photoCard)"
+></app-photo-card>

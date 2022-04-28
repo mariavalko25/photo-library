@@ -10,7 +10,7 @@ import { delay, Observable, Subject, takeUntil } from 'rxjs';
   styleUrls: ['./photo-list.component.scss'],
 })
 export class PhotoListComponent implements OnInit, OnDestroy {
-  public photoList: PhotoData[] = [];
+  public photoList!: PhotoData[];
   public page = 1;
   public isLoading = false;
 

@@ -1,0 +1,14 @@
+$size-photo-list-width: 100%;
+$size-photo-list-height: calc(100% - 70px);
+
+:host {
+  display: flex;
+  flex-wrap: wrap;
+  width: $size-photo-list-width;
+  height: $size-photo-list-height;
+  overflow: auto;
+
+  .photo-card {
+    margin: 0 30px;
+  }
+}
