@@ -1,0 +1,8 @@
+<div class="photo-list">
+  <app-photo-card
+    *ngFor="let favoritePhotoCard of favoritesPhotos$ | async"
+    class="photo-list__card"
+    [imgUrl]="favoritePhotoCard.imgUrl"
+    (click)="onPhotoCardClick(favoritePhotoCard)"
+  ></app-photo-card>
+</div>

@@ -1,0 +1,9 @@
+.photo-list {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+
+  &__card {
+    margin: 30px;
+  }
+}

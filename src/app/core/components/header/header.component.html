@@ -1,4 +1,8 @@
 <mat-toolbar class="header">
-  <app-button class="header__button" title="Photos" iconName="home"></app-button>
-  <app-button class="header__button" title="Favorites" iconName="favorite"></app-button>
+  <a routerLink="/" routerLinkActive="active">
+    <app-button class="header__button" title="Photos" iconName="home"></app-button>
+  </a>
+  <a routerLink="/favorites" routerLinkActive="active">
+    <app-button class="header__button" title="Favorites" iconName="favorite"></app-button>
+  </a>
 </mat-toolbar>

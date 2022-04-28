@@ -1,0 +1,8 @@
+<div class="photo-list">
+  <app-photo-card
+    *ngFor="let photoCard of photoList"
+    class="photo-list__card"
+    [imgUrl]="photoCard.imgUrl"
+    (click)="onPhotoCardClick(photoCard)"
+  ></app-photo-card>
+</div>

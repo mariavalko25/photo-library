@@ -5,5 +5,6 @@ import { PhotoCardComponent } from './photo-card.component';
 @NgModule({
   declarations: [PhotoCardComponent],
   imports: [CommonModule],
+  exports: [PhotoCardComponent],
 })
 export class PhotoCardModule {}
