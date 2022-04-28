@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { Observable, switchMap } from 'rxjs';
-import { FavoritesPhotosDataService } from 'src/app/core/services/favorites-photos-data/favorites-photos-data.service';
-import { PhotoData } from 'src/app/shared/models/photo-data.m';
+import { FavoritesPhotosDataService } from '../../core/services/favorites-photos-data/favorites-photos-data.service';
+import { PhotoData } from '../../shared/models/photo-data.m';
 
 @Component({
   selector: 'app-photo-details',
