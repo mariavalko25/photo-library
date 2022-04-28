@@ -1,6 +1,16 @@
+@import "colors";
+
 .header {
   display: flex;
   justify-content: center;
+
+  &__link {
+    &.active {
+      .header__button {
+        background-color: $color-blue-active;
+      }
+    }
+  }
 
   &__button {
     margin: 0 40px;

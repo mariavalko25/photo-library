@@ -1,8 +1,9 @@
 <mat-toolbar class="header">
-  <a routerLink="/" routerLinkActive="active">
+  <a class="header__link" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
     <app-button class="header__button" title="Photos" iconName="home"></app-button>
   </a>
-  <a routerLink="/favorites" routerLinkActive="active">
+
+  <a class="header__link" routerLink="/favorites" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
     <app-button class="header__button" title="Favorites" iconName="favorite"></app-button>
   </a>
 </mat-toolbar>
