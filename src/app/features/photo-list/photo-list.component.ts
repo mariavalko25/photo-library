@@ -19,10 +19,12 @@ export class PhotoListComponent implements OnInit, OnDestroy {
   constructor(private photoListDataService: PhotoListDataService, private favoritesPhotosDataService: FavoritesPhotosDataService) {}
 
   public ngOnInit(): void {
+    this.isLoading = true;
     this.getPhotoListData(this.page)
       .pipe(takeUntil(this.destroy$))
       .subscribe((photoList: PhotoData[]) => {
         this.photoList = photoList;
+        this.isLoading = false;
       });
   }
 

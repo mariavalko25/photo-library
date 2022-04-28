@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
+import { Router } from '@angular/router';
+import { Observable } from 'rxjs';
 import { FavoritesPhotosDataService } from '../../core/services/favorites-photos-data/favorites-photos-data.service';
 import { PhotoData } from 'src/app/shared/models/photo-data.m';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-favorites-photos',
@@ -10,12 +10,12 @@ import { Router } from '@angular/router';
   styleUrls: ['./favorites-photos.component.scss'],
 })
 export class FavoritesPhotosComponent implements OnInit {
-  public favoritesPhotos$!: BehaviorSubject<PhotoData[]>;
+  public favoritesPhotos$!: Observable<PhotoData[]>;
 
   constructor(private router: Router, private favoritesPhotosDataService: FavoritesPhotosDataService) {}
 
   public ngOnInit(): void {
-    this.favoritesPhotos$ = this.favoritesPhotosDataService.favoritesPhotos$;
+    this.favoritesPhotos$ = this.favoritesPhotosDataService.getFavoritesPhotos();
   }
 
   public onPhotoCardClick(photoCard: PhotoData): void {

@@ -1,1 +1,9 @@
-<p>photo-details works!</p>
+<ng-container *ngIf="photoCardData$ | async as photoCardData">
+  <app-photo-card class="photo-card" [imgUrl]="photoCardData.imgUrl"></app-photo-card>
+  <app-button
+    class="delete-button"
+    title="Delete from favorites"
+    iconName="delete"
+    (click)="onDeletePhotoFromFavorites(photoCardData.id)"
+  ></app-button>
+</ng-container>

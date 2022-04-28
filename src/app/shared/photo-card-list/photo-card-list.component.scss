@@ -1,5 +1,7 @@
 $size-photo-list-width: 100%;
 $size-photo-list-height: calc(100% - 70px);
+$size-photo-card-width: auto;
+$size-photo-card-height: 200px;
 
 :host {
   display: flex;
@@ -9,6 +11,8 @@ $size-photo-list-height: calc(100% - 70px);
   overflow: auto;
 
   .photo-card {
-    margin: 0 30px;
+    width: $size-photo-card-width;
+    height: $size-photo-card-height;
+    margin: 15px 30px;
   }
 }

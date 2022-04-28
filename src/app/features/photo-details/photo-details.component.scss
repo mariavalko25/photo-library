@@ -1,0 +1,25 @@
+@import "colors";
+
+$size-photo-details-wrapper-width: 100%;
+$size-photo-details-wrapper-height: 100%;
+$size-photo-card-width: auto;
+$size-photo-card-height: 500px;
+
+:host {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: $size-photo-details-wrapper-width;
+  height: $size-photo-details-wrapper-height;
+
+  .photo-card {
+    width: $size-photo-card-width;
+    height: $size-photo-card-height;
+    margin-bottom: 70px;
+  }
+
+  .delete-button {
+    background-color: $color-dangerous;
+  }
+}

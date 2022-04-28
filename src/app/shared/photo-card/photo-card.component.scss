@@ -1,5 +1,8 @@
+$size-photo-card-width: 100%;
+$size-photo-card-height: 100%;
+
 .photo-card {
-  &__img {
-    width: 200px;
-  }
+  width: $size-photo-card-width;
+  height: $size-photo-card-height;
+  cursor: pointer;
 }
