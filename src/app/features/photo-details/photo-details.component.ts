@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { Observable, switchMap } from 'rxjs';
 import { FavoritesPhotosDataService } from '../../core/services/favorites-photos-data/favorites-photos-data.service';
@@ -8,6 +8,7 @@ import { PhotoData } from '../../shared/models/photo-data.m';
   selector: 'app-photo-details',
   templateUrl: './photo-details.component.html',
   styleUrls: ['./photo-details.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class PhotoDetailsComponent implements OnInit {
   public photoCardData$!: Observable<PhotoData | null>;

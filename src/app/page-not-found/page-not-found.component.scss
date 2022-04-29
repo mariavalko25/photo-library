@@ -1,0 +1,9 @@
+@import "typography";
+
+:host {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  font-size: $font-size-40;
+}

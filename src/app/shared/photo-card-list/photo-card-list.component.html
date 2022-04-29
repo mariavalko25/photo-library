@@ -1,5 +1,5 @@
 <app-photo-card
-  *ngFor="let photoCard of photoList"
+  *ngFor="let photoCard of photoList; trackBy: trackByFn"
   class="photo-card"
   [imgUrl]="photoCard.imgUrl"
   (click)="photoCardClicked.emit(photoCard)"

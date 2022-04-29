@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnDestroy, OnInit } from '@angular/core';
 import { PhotoData } from 'src/app/shared/models/photo-data.m';
 import { PhotoListDataService } from '../../core/services/photo-list-data/photo-list-data.service';
 import { FavoritesPhotosDataService } from '../../core/services/favorites-photos-data/favorites-photos-data.service';
@@ -8,6 +8,7 @@ import { delay, Observable, Subject, takeUntil } from 'rxjs';
   selector: 'app-photo-list',
   templateUrl: './photo-list.component.html',
   styleUrls: ['./photo-list.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class PhotoListComponent implements OnInit, OnDestroy {
   public photoList!: PhotoData[];
@@ -16,7 +17,11 @@ export class PhotoListComponent implements OnInit, OnDestroy {
 
   private destroy$: Subject<boolean> = new Subject<boolean>();
 
-  constructor(private photoListDataService: PhotoListDataService, private favoritesPhotosDataService: FavoritesPhotosDataService) {}
+  constructor(
+    private photoListDataService: PhotoListDataService,
+    private favoritesPhotosDataService: FavoritesPhotosDataService,
+    private cdRef: ChangeDetectorRef,
+  ) {}
 
   public ngOnInit(): void {
     this.isLoading = true;
@@ -25,6 +30,7 @@ export class PhotoListComponent implements OnInit, OnDestroy {
       .subscribe((photoList: PhotoData[]) => {
         this.photoList = photoList;
         this.isLoading = false;
+        this.cdRef.markForCheck();
       });
   }
 
@@ -45,6 +51,7 @@ export class PhotoListComponent implements OnInit, OnDestroy {
       .subscribe((photoList: PhotoData[]) => {
         this.photoList = [...this.photoList, ...photoList];
         this.isLoading = false;
+        this.cdRef.markForCheck();
       });
   }
 
