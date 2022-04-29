@@ -1,4 +1,4 @@
-import 'jest-preset-angular/setup-jest';
+import '@angular-builders/jest';
 
 Object.defineProperty(window, 'CSS', { value: null });
 Object.defineProperty(window, 'getComputedStyle', {

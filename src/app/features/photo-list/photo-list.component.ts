@@ -39,6 +39,7 @@ export class PhotoListComponent implements OnInit, OnDestroy {
 
   public onScroll(): void {
     this.isLoading = true;
+    this.page++;
     this.getPhotoListData(this.page)
       .pipe(takeUntil(this.destroy$))
       .subscribe((photoList: PhotoData[]) => {

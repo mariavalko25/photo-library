@@ -2,7 +2,7 @@ import { ElementRef } from '@angular/core';
 import { CustomInfiniteScrollDirective } from './custom-infinite-scroll.directive';
 
 describe('CustomInfiniteScrollDirective', () => {
-  const elementRefSub = { 
+  const elementRefSub = {
     nativeElement: '<div></div>',
   } as ElementRef;
 
